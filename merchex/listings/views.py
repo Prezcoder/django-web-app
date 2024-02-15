@@ -6,17 +6,18 @@ from listings.models import Listing
 
 def hello(request):
 	bands = Band.objects.all()
-	title = Listing.objects.all()
 	return render(request, 'listings/hello.html',
         {'bands': bands})
 
 def about(request):
-    return HttpResponse('<h1>À propos</h1> <p>Nous adorons merch !</p>')
+    return render(request, 'listings/about-us.html')
 
 def listings(request):
-    return HttpResponse('<h1>Listings</h1>')
+	title = Listing.objects.all()
+	return render(request, 'listings/listings.html',
+		{'titles': title})
 
 def contact(request):
-    return HttpResponse('<h1>Contact us</h1> <p>On veut vous entendre !</p>')
+    return render(request, 'listings/contact-us.html')
 
 # Create your views here.

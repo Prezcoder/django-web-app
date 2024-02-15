@@ -4,8 +4,8 @@
 <h1>Hello Django !</h1>
 <p>Mes groupes préférés sont :</p>
 <ul>
-	{% for band in bands %}
-	<li>{{ band.name }}</li>
+	{% for title in titles %}
+	<li>{{ title.title }}</li>
 	{% endfor %}
 </ul>
 {% endblock %}
